@@ -1,0 +1,10 @@
+on_game_started_after_lobby = {
+  id = vicy3auto.setup_agri_toggle
+  trigger = { any_country = { is_player = yes } }
+  immediate = {
+    any_country = {
+      is_player = yes
+      add_country_modifier = vicy3auto_agri_active
+    }
+  }
+}
