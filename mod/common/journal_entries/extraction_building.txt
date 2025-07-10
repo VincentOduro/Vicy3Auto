@@ -3,7 +3,6 @@
 # fishing wharves, whaling stations, and oil rigs.
 
 journal = {
-    id = vicy3auto.dynamic_extraction_general
     group = vicy3auto_automation
     journal = vicy3auto.dynamic_extraction_general
     journal_reason = vicy3auto.dynamic_extraction_general_reason
