@@ -1,0 +1,110 @@
+# File: mod/common/journal_entries/extraction_mining_building.txt
+# Weekly JE for finite resource mining: coal, iron, lead, sulfur, gold mines.
+
+journal = {
+    id = vicy3auto.dynamic_extraction_mining
+    fire_only_once = no   # repeat weekly
+
+    on_weekly_pulse = {
+        trigger = { any_country = { is_player = yes has_country_modifier = vicy3auto_agri_active } }
+        immediate = {
+            any_country = { is_player = yes
+                every_owned_state = {
+                    # Only states with mineral deposits
+                    limit = { any_province = { has_state_resource = coal_deposit or has_state_resource = iron_deposit or has_state_resource = lead_deposit or has_state_resource = sulfur_deposit or has_state_resource = gold_deposit } }
+
+                    ###################################
+                    # Coal Mines
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_state_resource = coal_deposit
+                            base_mining_output_percent > 130
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = coal_mine
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Iron Mines
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_state_resource = iron_deposit
+                            base_mining_output_percent > 125
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = iron_mine
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Lead Mines
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_state_resource = lead_deposit
+                            base_mining_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = lead_mine
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Sulfur Mines
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_state_resource = sulfur_deposit
+                            base_mining_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = sulfur_mine
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Gold Fields (auto) & Gold Mines
+                    ###################################
+                    # Gold Fields are auto-created upon discovery; here we only build Gold Mines
+                    limit = {
+                        any_province = {
+                            has_state_resource = gold_deposit
+                            base_mining_output_percent > 135
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = gold_mine
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
