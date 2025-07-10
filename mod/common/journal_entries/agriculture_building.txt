@@ -1,7 +1,7 @@
 # File: mod/common/journal_entries/agriculture_building.txt
 
 journal = {
-    id = auto_builder.dynamic_agri
+    id = vicy3auto.dynamic_agri
     fire_only_once = no   # repeat weekly
 
     on_weekly_pulse = {
