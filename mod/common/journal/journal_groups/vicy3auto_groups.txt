@@ -1,0 +1,5 @@
+# mod/vicy3auto/common/journal/journal_groups/vicy3auto_groups.txt
+journal_group = {
+    key = vicy3auto_automation
+    loc_key = vicy3auto.group_title
+}
