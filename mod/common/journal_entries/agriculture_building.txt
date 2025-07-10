@@ -1,17 +1,19 @@
+#--------------------------------------------------
 # File: mod/common/journal_entries/agriculture_building.txt
 
 journal = {
-    id = vicy3auto.dynamic_agri
-    fire_only_once = no   # repeat weekly
+    id = vicy3auto.dynamic_agri        # unique JE key in your mod namespace
+    fire_only_once = no                # run every week until mod is disabled
 
     on_weekly_pulse = {
-        trigger = { any_country = { is_player = yes } }
+        # only run if automation flag is active on the player country
+        trigger = { any_country = { is_player = yes has_country_modifier = vicy3auto_agri_active } }
         immediate = {
             any_country = {
                 is_player = yes
 
                 every_owned_state = {
-                    # Only act if there's still arable land left
+                    # only proceed where there is arable land remaining
                     limit = { arable_land > 0 }
 
                     ###################################
@@ -126,4 +128,3 @@ journal = {
         }
     }
 }
-
