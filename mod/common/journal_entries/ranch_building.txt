@@ -1,0 +1,37 @@
+# File: mod/common/journal_entries/ranch_building.txt
+# A weekly JE for livestock ranches using remaining arable land when profitable.
+journal = {
+    id = vicy3auto.dynamic_ranch       # unique key for ranch automation
+    fire_only_once = no                # run weekly until disabled
+
+    on_weekly_pulse = {
+        trigger = { any_country = { is_player = yes has_country_modifier = vicy3auto_agri_active } }
+        immediate = {
+            any_country = {
+                is_player = yes
+
+                every_owned_state = {
+                    limit = { arable_land > 0 }  # ensure capacity
+
+                    ###################################
+                    # Livestock Ranches
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = livestock_ranch
+                            base_ranching_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = livestock_ranch
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
