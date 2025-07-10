@@ -1,5 +1,7 @@
-country_modifier = {
-  name = \"vicy3auto_agri_active\"
-  # no effects needed; presence simply flags automation as ON
-  allowed = { always = yes }
+on_game_started_after_lobby = {
+  id = vicy3auto.setup_toggle
+  trigger = { any_country = { is_player = yes } }
+  immediate = {
+    any_country = { is_player = yes add_country_modifier = vicy3auto_agri_active }
+  }
 }
