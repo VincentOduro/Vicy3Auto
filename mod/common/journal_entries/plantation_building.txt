@@ -4,12 +4,12 @@
 journal = {
     id = vicy3auto.dynamic_plantation  # unique key for plantation automation
     group = vicy3auto_automation
-    journal = vicy3auto.dynamic_plantation
-    journal_reason = vicy3auto.dynamic_plantation_reason
+    loc_title = "Automated Plantation Expansion"
+    loc_reason = "Expanding or upgrading plantations based on yield and reserves."
     fire_only_once = no                # run weekly until mod is disabled
 
     on_weekly_pulse = {
-        trigger = { is_player = yes has_country_modifier = vicy3auto_agri_active }
+        trigger = { is_player = yes country = { has_country_modifier = vicy3auto_agri_active } }
         immediate = {
             any_country = {
                 is_player = yes
