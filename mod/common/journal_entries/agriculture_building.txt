@@ -1,1 +1,129 @@
+# File: mod/common/journal_entries/agriculture_building.txt
+
+journal = {
+    id = auto_builder.dynamic_agri
+    fire_only_once = no   # repeat weekly
+
+    on_weekly_pulse = {
+        trigger = { any_country = { is_player = yes } }
+        immediate = {
+            any_country = {
+                is_player = yes
+
+                every_owned_state = {
+                    # Only act if there's still arable land left
+                    limit = { arable_land > 0 }
+
+                    ###################################
+                    # Wheat Farms
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = wheat_farms
+                            base_farming_output_percent > 130
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = wheat_farms
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Rye Farms
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = rye_farms
+                            base_farming_output_percent > 125
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = rye_farms
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Rice Farms
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = rice_farms
+                            base_farming_output_percent > 115
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = rice_farms
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Maize Farms
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = maize_farms
+                            base_farming_output_percent > 110
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = maize_farms
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Millet Farms
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = millet_farms
+                            base_farming_output_percent > 105
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = millet_farms
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Vineyard
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = vineyard
+                            base_farming_output_percent > 100
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = vineyard
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
