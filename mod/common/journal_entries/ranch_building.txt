@@ -1,7 +1,6 @@
 # File: mod/common/journal_entries/ranch_building.txt
 # A weekly JE for livestock ranches using remaining arable land when profitable.
 journal = {
-    id = vicy3auto.dynamic_ranch       # unique key for ranch automation
     group = vicy3auto_automation
     loc_title = "Automated Ranch Expansion"
     loc_reason = "Expanding or upgrading ranches based on yield and reserves."
