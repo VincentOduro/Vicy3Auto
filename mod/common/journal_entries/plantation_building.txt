@@ -1,0 +1,182 @@
+# File: mod/common/journal_entries/plantation_building.txt
+# A weekly JE for dynamic plantation expansion using remaining arable land when profitable.
+
+journal = {
+    id = vicy3auto.dynamic_plantation  # unique key for plantation automation
+    fire_only_once = no                # run weekly until mod is disabled
+
+    on_weekly_pulse = {
+        trigger = { any_country = { is_player = yes has_country_modifier = vicy3auto_agri_active } }
+        immediate = {
+            any_country = {
+                is_player = yes
+
+                every_owned_state = {
+                    limit = { arable_land > 0 }  # ensure capacity remains
+
+                    ###################################
+                    # Coffee Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = coffee_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = coffee_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Cotton Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = cotton_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = cotton_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Dye Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = dye_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = dye_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Opium Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = opium_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = opium_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Tea Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = tea_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = tea_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Tobacco Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = tobacco_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = tobacco_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Sugar Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = sugar_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = sugar_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Banana Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = banana_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = banana_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Silk Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = silk_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = silk_plantations
+                            level    = arable_land
+                            target   = scope:state
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
