@@ -1,0 +1,4 @@
+name="VICy3Auto"
+path="mod/vicy3auto"
+tags={ "Gameplay", "Automation" }
+supported_version="1.9.*"
