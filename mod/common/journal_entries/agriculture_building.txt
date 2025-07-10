@@ -10,7 +10,7 @@ journal = {
 
     on_weekly_pulse = {
         # only run if automation flag is active on the player country
-        trigger = { is_player = yes has_country_modifier = vicy3auto_agri_active } }
+        trigger = { is_player = yes has_country_modifier = vicy3auto_agri_active }
         immediate = {
             any_country = {
                 is_player = yes
