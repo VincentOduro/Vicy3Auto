@@ -1,0 +1,16 @@
+l_english:
+  # Agriculture
+  vicy3auto.dynamic_agri:0 "Automated Farm Expansion"
+  vicy3auto.dynamic_agri_reason:0 "Expanding or upgrading farms based on yield and reserves."
+  # Ranching
+  vicy3auto.dynamic_ranch:0 "Automated Ranch Expansion"
+  vicy3auto.dynamic_ranch_reason:0 "Expanding or upgrading ranches based on yield and reserves."
+  # Plantations
+  vicy3auto.dynamic_plantation:0 "Automated Plantation Expansion"
+  vicy3auto.dynamic_plantation_reason:0 "Expanding or upgrading plantations based on yield and reserves."
+  # Renewable Extraction
+  vicy3auto.dynamic_extraction_general:0 "Automated Renewable Extraction"
+  vicy3auto.dynamic_extraction_general_reason:0 "Expanding logging, fishing, and rubber plantations based on yield and reserves."
+  # Mining Extraction
+  vicy3auto.dynamic_extraction_mining:0 "Automated Mining Expansion"
+  vicy3auto.dynamic_extraction_mining_reason:0 "Expanding or upgrading mines based on deposit richness and reserves."
