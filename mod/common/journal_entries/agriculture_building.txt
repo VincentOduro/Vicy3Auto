@@ -2,15 +2,14 @@
 # File: mod/common/journal_entries/agriculture_building.txt
 
 journal = {
-    id = vicy3auto.dynamic_agri        # unique JE key in your mod namespace
     group = vicy3auto_automation
-    journal = vicy3auto.dynamic_agri
-    journal_reason = vicy3auto.dynamic_agri_reason
+    loc_title = vicy3auto.dynamic_agri
+    loc_reason = vicy3auto.dynamic_agri_reason
     fire_only_once = no                # run every week until mod is disabled
 
     on_weekly_pulse = {
         # only run if automation flag is active on the player country
-        trigger = { is_player = yes has_country_modifier = vicy3auto_agri_active }
+        trigger = { is_player = yes country = { has_country_modifier = vicy3auto_agri_active } }
         immediate = {
             any_country = {
                 is_player = yes
