@@ -9,7 +9,7 @@ journal = {
     fire_only_once = no   # repeat weekly
 
     on_weekly_pulse = {
-        trigger = { is_player = yes has_country_modifier = vicy3auto_agri_active }
+        trigger = { is_player = yes country = { has_country_modifier = vicy3auto_agri_active } }
         immediate = {
             any_country = { is_player = yes
                 every_owned_state = {
