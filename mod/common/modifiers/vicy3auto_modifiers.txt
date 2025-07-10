@@ -1,0 +1,5 @@
+country_modifier = {
+  name = \"vicy3auto_agri_active\"
+  # no effects needed; presence simply flags automation as ON
+  allowed = { always = yes }
+}
