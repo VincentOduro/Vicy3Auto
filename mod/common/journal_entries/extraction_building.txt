@@ -1,0 +1,111 @@
+# File: mod/common/journal_entries/extraction_building.txt
+# Weekly JE for renewable and deposit-based extraction: logging camps, rubber plantations,
+# fishing wharves, whaling stations, and oil rigs.
+
+journal = {
+    id = vicy3auto.dynamic_extraction_general
+    fire_only_once = no   # repeat weekly
+
+    on_weekly_pulse = {
+        trigger = { any_country = { is_player = yes has_country_modifier = vicy3auto_agri_active } }
+        immediate = {
+            any_country = { is_player = yes
+                every_owned_state = {
+                    # Ensure capacity via remaining resource_deposit (arable for plantations or deposit for rigs)
+                    limit = { resource_deposit > 0 }
+
+                    ###################################
+                    # Logging Camps
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = logging_camp
+                            base_logging_output_percent > 110
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = logging_camp
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Rubber Plantations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = rubber_plantations
+                            base_plantation_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = rubber_plantations
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Fishing Wharves
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = fishing_wharf
+                            base_fishing_output_percent > 115
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = fishing_wharf
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Whaling Stations
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = whaling_station
+                            base_whaling_output_percent > 120
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = whaling_station
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+
+                    ###################################
+                    # Oil Rigs
+                    ###################################
+                    limit = {
+                        any_province = {
+                            has_building_slot = oil_rig
+                            has_technology = pumpjack
+                            base_oil_output_percent > 140
+                        }
+                    }
+                    limit = { cash_reserves_ratio >= 0.95 }
+                    owner = {
+                        add_to_construction_queue = {
+                            building = oil_rig
+                            level    = resource_deposit
+                            target   = scope:state
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
