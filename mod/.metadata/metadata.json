@@ -1,10 +1,10 @@
 {
   "name" : "Name of your Mod",
-  "id" : "com.github.your-github-name.your-repo-name",
+  "id" : "com.github.VincentOduro.Vicy3Auto",
   "version" : "0.1.0",
   "game_id" : "victoria3",
   "picture" : "thumbnail.png",
-  "supported_game_version" : "1.8.*",
+  "supported_game_version" : "1.9.*",
   "short_description" : "Description of your Mod",
   "tags" : [],
   "relationships" : [],
